@@ -68,7 +68,7 @@ public class Conta implements IConta {
     }
 
     @Override
-    public void transferir(double valor, Conta contaTransferencia) {
+    public void transferir(Conta contaTransferencia, double valor) {
         if(valor > 0 && getSaldo() >= valor) {
             setSaldo(getSaldo() - valor);
             contaTransferencia.saldo = contaTransferencia.getSaldo() + valor;
@@ -80,6 +80,6 @@ public class Conta implements IConta {
 
     @Override
     public void extrato() {
-
+        System.out.println("Saldo: " + saldo);
     }
 }
